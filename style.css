@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 :root{
-
+  --cell-size:80px;
 }
 body{
   margin: 0;
@@ -17,13 +17,14 @@ height: 100vh;
 display: grid;
 grid-template-columns: repeat(3, auto);
 justify-content:center;
-align-items: center;
 align-content: center;
+
 }
 .cell{
-  width:70px ;
-  height:70px;
+  width:var(--cell-size) ;
+  height:var(--cell-size);
   border:  1px solid black;
+  position: relative;
 }
 .cell:is(:first-child,:nth-child(2),:nth-child(3)){
   border-top: none;
@@ -39,4 +40,46 @@ align-content: center;
 
 .cell:is(:last-child,:nth-child(8),:nth-child(7)){
   border-bottom: none;
+}
+
+.cell.x::before,.cell.x::after{
+  content: '';
+  background-color: black;
+  width:calc(var(--cell-size)*.15 );
+  height:calc(var(--cell-size)*.9);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+/*   transform:translateX(-50%); */
+}
+
+.cell.x::before{
+  transform:translate(-50%,-50%) rotate(45deg) ;
+}
+.cell.x::after{
+  transform: translate(-50%,-50%) rotate(-45deg)  ;
+}
+
+.cell.o::before{
+  content: '';
+  background-color: black;
+  width: calc(var(--cell-size)*0.9);
+  height: calc(var(--cell-size)*0.9);
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-radius: 50%;
+}
+.cell.o::after{
+  content: '';
+  background-color: white;
+  width: calc(var(--cell-size)*0.65);
+  height: calc(var(--cell-size)*0.65);
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-radius: 50%;
+
 }
