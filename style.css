@@ -42,7 +42,7 @@ align-content: center;
   border-bottom: none;
 }
 .cell.x::before,.cell.x::after,
-.cell:not(.x):hover::before,.cell:not(.x):hover::after{
+.board.x .cell:not(.x):hover::before,.cell:not(.x):hover::after{
   content: '';
   background-color: black;
   width:calc(var(--cell-size)*.15 );
@@ -51,6 +51,7 @@ align-content: center;
   left: 50%;
   top: 50%;
 /*   transform:translateX(-50%); */
+
 }
 .cell.x::before,
 .cell:not(.x):hover::before{
@@ -60,8 +61,12 @@ align-content: center;
 .cell:not(.x):hover::after{
   transform: translate(-50%,-50%) rotate(-45deg)  ;
 }
+.cell:not(.x):hover::before,.cell:not(.x):hover::after{
+  background-color: rgb(167, 167, 167);
+}
 
-.cell.o:hover::before{
+.cell.o::before,
+.board.o .cell:not(.o):hover::before{
   content: '';
   background-color: black;
   width: calc(var(--cell-size)*0.9);
@@ -72,7 +77,12 @@ align-content: center;
   transform:translate(-50%,-50%);
   border-radius: 50%;
 }
-.cell.o:hover::after{
+.board.o .cell:not(.o):hover::before{
+  background-color:  rgb(167, 167, 167);
+
+}
+.cell.o:hover::after,
+.board.o .cell:not(.o):hover::after{
   content: '';
   background-color: white;
   width: calc(var(--cell-size)*0.65);
@@ -82,5 +92,4 @@ align-content: center;
   top:50%;
   transform:translate(-50%,-50%);
   border-radius: 50%;
-
 }
