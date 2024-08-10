@@ -42,7 +42,7 @@ align-content: center;
   border-bottom: none;
 }
 .cell.x::before,.cell.x::after,
-.board.x .cell:not(.x):hover::before,.cell:not(.x):hover::after{
+.board.x .cell:not(.x):not(.o):hover::before,.cell:not(.x):not(.o):hover::after{
   content: '';
   background-color: black;
   width:calc(var(--cell-size)*.15 );
@@ -61,12 +61,12 @@ align-content: center;
 .cell:not(.x):hover::after{
   transform: translate(-50%,-50%) rotate(-45deg)  ;
 }
-.cell:not(.x):hover::before,.cell:not(.x):hover::after{
+.board.x .cell:not(.x):not(.o):hover::before,.cell:not(.x):not(.o):hover::after{
   background-color: rgb(167, 167, 167);
 }
 
 .cell.o::before,
-.board.o .cell:not(.o):hover::before{
+.board.o .cell:not(.o):not(.x):hover::before{
   content: '';
   background-color: black;
   width: calc(var(--cell-size)*0.9);
@@ -82,7 +82,7 @@ align-content: center;
 
 }
 .cell.o:hover::after,
-.board.o .cell:not(.o):hover::after{
+.board.o .cell:not(.o):not(.x):hover::after{
   content: '';
   background-color: white;
   width: calc(var(--cell-size)*0.65);
