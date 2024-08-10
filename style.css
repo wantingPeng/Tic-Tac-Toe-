@@ -1,0 +1,42 @@
+*,*::after,*::befor{
+  box-sizing: border-box;
+}
+:root{
+
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.board{
+/*   width: 210px;
+display: grid;
+grid-template-columns:repeat(3,1fr);
+justify-content: center; */
+height: 100vh;
+display: grid;
+grid-template-columns: repeat(3, auto);
+justify-content:center;
+align-items: center;
+align-content: center;
+}
+.cell{
+  width:70px ;
+  height:70px;
+  border:  1px solid black;
+}
+.cell:is(:first-child,:nth-child(2),:nth-child(3)){
+  border-top: none;
+}
+
+.cell:nth-child(3n+1){
+  border-left: none;
+}
+
+.cell:nth-child(3n+3){
+  border-right: none;
+}
+
+.cell:is(:last-child,:nth-child(8),:nth-child(7)){
+  border-bottom: none;
+}
