@@ -54,14 +54,15 @@ align-content: center;
 
 }
 .cell.x::before,
-.cell:not(.x):hover::before{
+ .cell:not(.x):hover::before {
   transform:translate(-50%,-50%) rotate(45deg) ;
 }
 .cell.x::after,
-.cell:not(.x):hover::after{
+ .cell:not(.x):hover::after {
   transform: translate(-50%,-50%) rotate(-45deg)  ;
 }
-.board.x .cell:not(.x):not(.o):hover::before,.cell:not(.x):not(.o):hover::after{
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after{
   background-color: rgb(167, 167, 167);
 }
 
@@ -77,7 +78,7 @@ align-content: center;
   transform:translate(-50%,-50%);
   border-radius: 50%;
 }
-.board.o .cell:not(.o):hover::before{
+.board.o .cell:not(.o):not(.x):hover::before{
   background-color:  rgb(167, 167, 167);
 
 }
