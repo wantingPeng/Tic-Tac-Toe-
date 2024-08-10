@@ -81,7 +81,7 @@ align-content: center;
   background-color:  rgb(167, 167, 167);
 
 }
-.cell.o:hover::after,
+.cell.o::after,
 .board.o .cell:not(.o):not(.x):hover::after{
   content: '';
   background-color: white;
@@ -92,4 +92,8 @@ align-content: center;
   top:50%;
   transform:translate(-50%,-50%);
   border-radius: 50%;
+}
+
+.cell.o,.cell.x{
+  cursor: not-allowed;
 }
